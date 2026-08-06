@@ -4,6 +4,7 @@
     --text-color:#374151;
     --background-color:#F9FAFB;
     --white:#FFFFFF;
+    --header-text-color:#FFFFFF;
 }
 
 
@@ -37,14 +38,14 @@ p{
     margin:0;
 }
 .nav-links a{
-    color:var(--white);
+    color:var(--header-text-color);
     text-decoration:none;
 }
 .nav-links a:hover{
     color:var(--secondary-color);
 }
 .logo{
-    color:var(--white);
+    color:var(--header-text-color);
     margin:0;
 }
 section{
@@ -65,4 +66,10 @@ button{
 button:hover{
     background-color:var(--secondary-color);
     color:var(--primary-color);
+}
+.dark-mode{
+    --background-color:#121212;
+    --text-color:#E5E7EB;
+    --primary-color:#60A5FA;
+    --secondary-color:#FBBF24;
 }
