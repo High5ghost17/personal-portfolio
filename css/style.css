@@ -67,6 +67,13 @@ button:hover{
     background-color:var(--secondary-color);
     color:var(--primary-color);
 }
+#skills li {
+    color: var(--text-color);
+}
+#skills strong,
+#projects strong{
+    color:var(--primary-color);
+}
 .dark-mode{
     --background-color:#121212;
     --text-color:#E5E7EB;
