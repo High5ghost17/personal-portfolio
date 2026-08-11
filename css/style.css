@@ -80,3 +80,6 @@ button:hover{
     --primary-color:#60A5FA;
     --secondary-color:#FBBF24;
 }
+.hidden{
+    display:none;
+}
