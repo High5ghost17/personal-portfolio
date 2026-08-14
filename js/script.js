@@ -18,14 +18,19 @@ else{
     themeToggle.textContent="Dark Mode";
 }
 });
-const programmingToggle=document.getElementById("programming-toggle");
-const programmingList=document.getElementById("programming-list");
-programmingToggle.addEventListener("click",function(){
-    programmingList.classList.toggle("hidden");
-if (programmingList.classList.contains("hidden")){
-    programmingToggle.textContent="Programming Languages ▶";
-}
-else{
-    programmingToggle.textContent="Programming Languages ▼";
-}
+
+const skillToggles=document.querySelectorAll(".skill-toggle");
+skillToggles.forEach(function(button){
+const targetId=button.dataset.target;
+const targetList=document.getElementById(targetId);
+const arrow = button.querySelector(".arrow");
+button.addEventListener("click",function(){
+    targetList.classList.toggle("hidden");
+    if(targetList.classList.contains("hidden")){
+        arrow.textContent="▶";
+    }else {
+    arrow.textContent = "▼";
+    }
+   
+})
 });
