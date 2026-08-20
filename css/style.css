@@ -85,5 +85,13 @@ button:hover{
     display:none;
 }
 .skill-toggle{
-    display:block;
+    display: block;
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 10px 0;
+}
+.skill-toggle:hover{
+    background-color: transparent;
+    color: var(--secondary-color);
 }
