@@ -15,7 +15,9 @@ body {
     
 }
 h1,
-h2{
+h2,
+h3,
+h4{
     color:var(--primary-color);
 }
 
@@ -94,4 +96,14 @@ button:hover{
 .skill-toggle:hover{
     background-color: transparent;
     color: var(--secondary-color);
+}
+article{
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 8px;
+}
+.projects-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
