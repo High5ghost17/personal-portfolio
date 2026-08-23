@@ -107,3 +107,21 @@ article{
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+@media(max-width:650px){
+    .projects-container{
+        grid-template-columns: 1fr;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    
+    }
+    .nav-links{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    #theme-toggle{
+        padding: 0;
+    }
+}
