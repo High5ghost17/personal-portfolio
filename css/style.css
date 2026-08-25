@@ -52,7 +52,7 @@ p{
     margin:0;
 }
 section{
-    padding:80px 10%;
+    padding:70px 10%;
 }
 html{
     scroll-behavior:smooth;
@@ -73,9 +73,8 @@ button:hover{
 #skills li {
     color: var(--text-color);
 }
-#skills strong,
-#projects strong{
-    color:var(--primary-color);
+#projects li{
+    color: var(--text-color);
 }
 .dark-mode{
     --background-color:#121212;
@@ -123,5 +122,11 @@ article{
     }
     #theme-toggle{
         padding: 0;
+    }
+    section{
+        padding: 50px 8%;
+    }
+    .logo{
+        font-size: 28px;
     }
 }
