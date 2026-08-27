@@ -34,3 +34,35 @@ button.addEventListener("click",function(){
    
 })
 });
+const projects =[
+    {
+        name : "portfolio projects",
+        description :"A responsive personal portfolio website showcasing my skills,projects, and journey toward becoming a software engineer.",
+        technologies : ["HTML","CSS","Javascript"]       
+    },
+    {
+        name :"DeepSight",
+        description :"An AI-powered web platform designed to assist ophthalmologists with the preliminary analysis of eye scans while keeping the final diagnosis with the ophthalmologist.",
+        technologies :["Python","HTML"]
+    }
+
+]
+const projectsContainer = document.querySelector(".projects-container");
+const article = document.createElement("article");
+
+
+projects.forEach(function(project){
+    const article = document.createElement("article");
+    const list = document.createElement("ul");
+    project.technologies.forEach(function(technology){
+        const item =document.createElement("li");
+        item.textContent = technology;
+        list.append(item);
+    });
+    article.innerHTML = `<h3>${project.name}</h3>
+                    <p>${project.description}</p>
+                    <h4>Technologies</h4>
+                    `;
+    article.append(list);
+    projectsContainer.append(article);
+});
