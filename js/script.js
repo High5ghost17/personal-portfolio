@@ -38,21 +38,36 @@ const projects =[
     {
         name : "portfolio projects",
         description :"A responsive personal portfolio website showcasing my skills,projects, and journey toward becoming a software engineer.",
-        technologies : ["HTML","CSS","Javascript"]       
-    },
+        role:"Developer, responsible for building and styling the website.",
+        details: "A personal portfolio showcasing my skills and projects. It includes interactive features such as dark mode, collapsible skill lists and project cards.",
+        technologies : ["HTML","CSS","Javascript"]
+      },
     {
         name :"DeepSight",
         description :"An AI-powered web platform designed to assist ophthalmologists with the preliminary analysis of eye scans while keeping the final diagnosis with the ophthalmologist.",
+        role :"Front-end developer,focused on building a responsive and a user-friendly web application.",
+        details: "Collaborated with a team to analyse and design a web-based healthcare platform for the preliminary detection of eye diseases using Artificial Intelligence. Focused mainly on the front-end development of the system and worked with team members to ensure the interface aligned with the system requirements.",
         technologies :["Python","HTML"]
     }
 
 ]
 const projectsContainer = document.querySelector(".projects-container");
-const article = document.createElement("article");
-
 
 projects.forEach(function(project){
     const article = document.createElement("article");
+    const button = document.createElement("button");
+    button.textContent="View Details";
+    button.dataset.project = project.name;
+    const detailsParagraph = document.createElement("p");
+    detailsParagraph.textContent=project.details;
+    detailsParagraph.classList.add("hidden");
+    button.addEventListener("click",function(){
+     detailsParagraph.classList.toggle("hidden")
+     if(detailsParagraph.classList.contains("hidden")){
+        button.textContent="View Details"
+     }
+     else{button.textContent="Hide Details"}
+    });
     const list = document.createElement("ul");
     project.technologies.forEach(function(technology){
         const item =document.createElement("li");
@@ -61,8 +76,11 @@ projects.forEach(function(project){
     });
     article.innerHTML = `<h3>${project.name}</h3>
                     <p>${project.description}</p>
+                    <p>Role: ${project.role}</p>
                     <h4>Technologies</h4>
                     `;
     article.append(list);
+    article.append(button);
+    article.append(detailsParagraph);
     projectsContainer.append(article);
 });
