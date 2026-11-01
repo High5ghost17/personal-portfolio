@@ -52,8 +52,29 @@ const projects =[
 
 ]
 const projectsContainer = document.querySelector(".projects-container");
-
-projects.forEach(function(project){
+const projectsFilter = document.querySelector(".projects-filters");
+console.log(projectsFilter);
+const filterOptions = ["All","HTML","CSS","Python"];
+filterOptions.forEach(function(filter){
+    const filterButton =document.createElement("button");
+    filterButton.textContent = filter;
+    projectsFilter.append(filterButton);
+    filterButton.addEventListener("click",function(){
+        if(filter === "All"){
+          displayProjects(projects);  
+        }
+        else{
+            const filteredProjects = projects.filter(function(project) {
+            return project.technologies.includes(filter);
+            
+        });
+        displayProjects(filteredProjects);
+        }
+    })
+});
+function displayProjects(projectsToDisplay){
+projectsContainer.innerHTML = "";
+projectsToDisplay.forEach(function(project){
     const article = document.createElement("article");
     const button = document.createElement("button");
     button.textContent="View Details";
@@ -84,3 +105,5 @@ projects.forEach(function(project){
     article.append(detailsParagraph);
     projectsContainer.append(article);
 });
+};
+displayProjects(projects);
